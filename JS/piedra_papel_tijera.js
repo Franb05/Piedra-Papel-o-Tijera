@@ -4,7 +4,11 @@ let computerScore = 0;
 
 //Funciones
 function getHumanChoice() {
-  const usuario = prompt("Ingrese piedra, papel o tijera");
+  const usuario = prompt("Ingrese piedra, papel o tijera").trim().toLowerCase();
+  /*
+  .trim : Elimina los espacios en blanco al principio y al final de un texto
+  .toLowerCase: Sirve para convertir siempre la entrada del usuario a minúsculas
+  */
   return usuario;
 }
 
@@ -46,10 +50,32 @@ function playRound(humanChoice, computerChoice) {
     return "GANASTE";
   }
 }
-
+/* PRUEBA DE PLAY ROUND
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 console.log(playRound(humanSelection, computerSelection));
 console.log(humanScore);
 console.log(computerScore);
+*/
+
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    console.log(playRound(humanSelection, computerSelection));
+    console.log("Usuario= ", humanScore);
+    console.log("Computadora= ", computerScore);
+  }
+
+  if (humanScore > computerScore) {
+    console.log("🎉 ¡Felicitaciones! Ganaste la partida.");
+  } else if (computerScore > humanScore) {
+    console.log("💻 La computadora ganó la partida. ¡Intentá nuevamente!");
+  } else {
+    console.log("🤝 La partida terminó en empate.");
+  }
+}
+
+playGame();
