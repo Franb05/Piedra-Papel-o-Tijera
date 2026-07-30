@@ -1,5 +1,3 @@
-# Piedra-Papel-o-Tijera
-
 # Rock Paper Scissors
 
 ## About
