@@ -1,3 +1,8 @@
+//Variables Globales
+let humanScore = 0;
+let computerScore = 0;
+
+//Funciones
 function getHumanChoice() {
   const usuario = prompt("Ingrese piedra, papel o tijera");
   return usuario;
