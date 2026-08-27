@@ -60,7 +60,7 @@ console.log(computerScore);
 */
 
 function playGame() {
-  for (let i = 0; i < 5; i++) {
+  {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
