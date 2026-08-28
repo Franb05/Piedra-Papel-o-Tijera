@@ -9,20 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const marcadorDiv = document.getElementById("marcador");
 
+  const ganador = document.getElementById("ganador");
+
   let humanScore = 0;
   let computerScore = 0;
 
   piedraBtn.addEventListener("click", () => {
     resultadoDiv.textContent = playRound("piedra", getComputerChoice());
     marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
+    const resultadoGanador = chequearGanador();
+    if (resultadoGanador) {
+      ganador.textContent = resultadoGanador;
+    }
   });
   papelBtn.addEventListener("click", () => {
     resultadoDiv.textContent = playRound("papel", getComputerChoice());
     marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
+    const resultadoGanador = chequearGanador();
+    if (resultadoGanador) {
+      ganador.textContent = resultadoGanador;
+    }
   });
   tijeraBtn.addEventListener("click", () => {
     resultadoDiv.textContent = playRound("tijera", getComputerChoice());
     marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
+    const resultadoGanador = chequearGanador();
+    if (resultadoGanador) {
+      ganador.textContent = resultadoGanador;
+    }
   });
 
   //Funciones
