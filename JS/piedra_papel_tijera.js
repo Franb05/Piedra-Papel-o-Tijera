@@ -61,4 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return "GANASTE";
     }
   }
+
+  function chequearGanador() {
+    if (humanScore === 5) {
+      return "Ganaste la partida!";
+    } else if (computerScore === 5) {
+      return "Perdiste la partida!";
+    }
+  }
 });
