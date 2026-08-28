@@ -4,17 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const papelBtn = document.getElementById("btn-papel");
   const tijeraBtn = document.getElementById("btn-tijera");
 
+  const resultadoDiv = document.getElementById("resultado");
+
   piedraBtn.addEventListener("click", () => {
-    playRound("piedra", getComputerChoice());
-    console.log("Hiciste click en Piedra");
+    resultadoDiv.textContent = playRound("piedra", getComputerChoice());
   });
   papelBtn.addEventListener("click", () => {
-    playRound("papel", getComputerChoice());
-    console.log("Hiciste click en Papel");
+    resultadoDiv.textContent = playRound("papel", getComputerChoice());
   });
   tijeraBtn.addEventListener("click", () => {
-    playRound("tijera", getComputerChoice());
-    console.log("Hiciste click en Tijera");
+    resultadoDiv.textContent = playRound("tijera", getComputerChoice());
   });
 
   //Variables Globales
@@ -33,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return "tijera";
     }
   }
-
-  //console.log(getComputerChoice());
 
   function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
