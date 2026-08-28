@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //Variables Globales
   // Seleccionamos los botones y agregamos el evento click
   const piedraBtn = document.getElementById("btn-piedra");
   const papelBtn = document.getElementById("btn-papel");
@@ -6,19 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const resultadoDiv = document.getElementById("resultado");
 
+  const marcadorDiv = document.getElementById("marcador");
+
+  let humanScore = 0;
+  let computerScore = 0;
+
   piedraBtn.addEventListener("click", () => {
     resultadoDiv.textContent = playRound("piedra", getComputerChoice());
+    marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
   });
   papelBtn.addEventListener("click", () => {
     resultadoDiv.textContent = playRound("papel", getComputerChoice());
+    marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
   });
   tijeraBtn.addEventListener("click", () => {
     resultadoDiv.textContent = playRound("tijera", getComputerChoice());
+    marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
   });
-
-  //Variables Globales
-  let humanScore = 0;
-  let computerScore = 0;
 
   //Funciones
 
