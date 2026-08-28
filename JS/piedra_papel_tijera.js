@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let computerScore = 0;
 
   piedraBtn.addEventListener("click", () => {
+    if (chequearGanador()) {
+      return;
+    }
     resultadoDiv.textContent = playRound("piedra", getComputerChoice());
     marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
     const resultadoGanador = chequearGanador();
@@ -23,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   papelBtn.addEventListener("click", () => {
+    if (chequearGanador()) {
+      return;
+    }
     resultadoDiv.textContent = playRound("papel", getComputerChoice());
     marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
     const resultadoGanador = chequearGanador();
@@ -31,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   tijeraBtn.addEventListener("click", () => {
+    if (chequearGanador()) {
+      return;
+    }
     resultadoDiv.textContent = playRound("tijera", getComputerChoice());
     marcadorDiv.textContent = `Jugador: ${humanScore} | Computadora: ${computerScore}`;
     const resultadoGanador = chequearGanador();
